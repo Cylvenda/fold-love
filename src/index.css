@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+body {
+  @apply bg-cream text-wine font-sans antialiased overflow-x-hidden;
+  background-image:
+    radial-gradient(circle at 20% 0%, #ffe4e6 0, transparent 45%),
+    radial-gradient(circle at 90% 40%, #fff1f2 0, transparent 40%);
+  background-attachment: fixed;
+}
+button { touch-action: manipulation; }
+
+@layer components {
+  .container-m { @apply w-full max-w-md mx-auto px-4; }
+  .glass { @apply backdrop-blur-md bg-white/80 border border-rose-200/50 shadow-lg shadow-rose-200/40; }
+  .btn-rose {
+    @apply rounded-2xl px-5 py-3.5 font-semibold text-white bg-gradient-to-r from-rose-500 to-wine
+           shadow-lg shadow-rose-400/40 active:scale-95 transition-transform;
+  }
+  .section-title { @apply font-script text-4xl text-wine text-center; }
+}
+
+.parchment {
+  background-color: #f6e7c8;
+  background-image:
+    radial-gradient(ellipse at top left, rgba(255,255,255,.55), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(160,100,40,.25), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(120,80,30,.04) 0 2px, transparent 2px 5px);
+}
+.vinyl {
+  background: repeating-radial-gradient(circle, #1f1f1f 0 2px, #2c2c2c 2px 4px);
+}
+.flip-3d { perspective: 1000px; }
+.flip-inner { transform-style: preserve-3d; }
+.flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
